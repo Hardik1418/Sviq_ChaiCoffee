@@ -9,7 +9,7 @@ const cors = require("cors");
 const officeRoutes = require("./routes/office.route"); // Import the office routes
 
 const app = express();
-const PORT = 2222;
+const PORT = 9999;
 
 connectDB;
 
