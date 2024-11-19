@@ -2,7 +2,7 @@
   "name": "chai_coffee",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "echo 'No build step required for Node.js backend'",
     "start": "node index.js"
