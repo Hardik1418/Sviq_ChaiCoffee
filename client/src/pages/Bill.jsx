@@ -6,6 +6,7 @@ import {
   getFilterBill,
   generatePdf,
 } from "../../services/chaiCoffee.service";
+const BASE_URL = import.meta.env.VITE_BASE_URL; // Access VITE_BASE_URL from .env
 
 const Bill = () => {
   const { id } = useParams();
@@ -104,7 +105,7 @@ const Bill = () => {
           const url = window.URL.createObjectURL(blob);
           console.log("url:", url);
           window.open(
-            `http://localhost:2222/getBillChaiCoffee/generate-pdf/${id}`,
+            `${BASE_URL}/getBillChaiCoffee/generate-pdf/${id}`,
             "_blank"
           );
         }
