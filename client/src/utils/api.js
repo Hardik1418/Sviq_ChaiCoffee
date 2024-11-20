@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// Ensure the base URL is accessible
-const BASE_URL = "http://localhost:2222"; // Default to localhost if not found
+const BASE_URL = import.meta.env.VITE_BASE_URL; // Access VITE_BASE_URL from .env
+console.log("Base URL:", BASE_URL);
 
 export async function get(url, params) {
   const queryString = params
@@ -9,7 +9,7 @@ export async function get(url, params) {
     : "";
   try {
     const response = await axios.get(`${BASE_URL}${url}${queryString}`);
-    console.log("api response:", response);
+    console.log("API response:", response);
 
     return response.data;
   } catch (error) {
@@ -21,7 +21,7 @@ export async function get(url, params) {
 export async function post(url, data) {
   try {
     const response = await axios.post(`${BASE_URL}${url}`, data);
-    console.log("Api response:", response);
+    console.log("API response:", response);
 
     return response;
   } catch (error) {
