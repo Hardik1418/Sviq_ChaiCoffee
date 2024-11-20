@@ -19,9 +19,8 @@ const LoginPage = () => {
     const response = await Login(loginData);
     console.log("response:", response);
 
-    if (response.statusText === "OK") {
-      const id = response.data.data.merchant_id;
-
+    if (response.status === 200) {
+      const id = response?.data?.data?.merchant_id;
       navigate(`/home/${id}`); // Navigate to the HomePage on successful login
     } else {
       setError("Invalid username or password");
